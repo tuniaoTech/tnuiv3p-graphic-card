@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "workspaces": [
+    "play",
+    "internal/*"
+  ],
+  "scripts": {
+    "dev:h5": "pnpm -C play dev:h5",
+    "dev:weixin": "pnpm -C play dev:mp-weixin",
+    "dev:app": "pnpm -C play dev:app-android",
+    "update:version": "tsx scripts/update-version.ts",
+    "build": "pnpm run -C internal/build start",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
+    "lint": "eslint . --ext .js,.vue,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "pnpm run lint --fix",
+    "stub": "pnpm run -r --parallel stub",
+    "postinstall": "pnpm stub"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tuniao/eslint-config": "^1.0.5",
+    "@types/node": "^20.3.3",
+    "@vue/tsconfig": "^0.4.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.44.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "unplugin-vue-macros": "^2.3.0"
+  },
+  "dependencies": {
+    "@tuniao-plugin/build-utils": "workspace:^"
+  }
+}

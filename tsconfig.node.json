@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "internal/**/*",
+    "internal/**/*.json",
+    "scripts/**/*",
+    "play/src/packages/src/theme-chalk/*",
+    "play/src/packages/tnui-vue3-uniapp-plugin/package.json"
+  ],
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
+}

@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.play.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.vite-config.json" }
+  ]
+}
