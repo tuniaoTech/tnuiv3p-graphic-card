@@ -3,6 +3,7 @@ import TnIcon from '@tuniao/tnui-vue3-uniapp/components/icon/src/icon.vue'
 import TnPhotoAlbum from '@tuniao/tnui-vue3-uniapp/components/photo-album/src/photo-album.vue'
 import TnAvatar from '@tuniao/tnui-vue3-uniapp/components/avatar/src/avatar.vue'
 import TnAvatarGroup from '@tuniao/tnui-vue3-uniapp/components/avatar/src/avatar-group.vue'
+import TnLazyLoad from '@tuniao/tnui-vue3-uniapp/components/lazy-load/src/lazy-load.vue'
 import { graphicCardEmits, graphicCardProps } from './types'
 import { useGraphicCard, useGraphicCardCustomStyle } from './composables'
 
@@ -12,6 +13,7 @@ const emits = defineEmits(graphicCardEmits)
 const {
   viewUserAvatars,
   viewUserCount,
+  imageCount,
   cardClickEvent,
   handleAvatarClick,
   handleMoreClick,
@@ -50,11 +52,15 @@ const {
           </view>
         </view>
       </view>
-      <view
-        :class="[ns.e('brief-info__operation')]"
-        @tap.stop="handleMoreClick"
-      >
-        <TnIcon name="more-vertical" />
+      <view :class="[ns.e('brief-info__operation')]">
+        <slot name="briefOperation">
+          <view
+            :class="[ns.em('brief-info__operation', 'more')]"
+            @tap.stop="handleMoreClick"
+          >
+            <TnIcon name="more-vertical" />
+          </view>
+        </slot>
       </view>
     </view>
     <!-- 内容容器 -->
@@ -79,8 +85,48 @@ const {
         </view>
       </view>
       <!-- 图片列表 -->
-      <view v-if="images.length" :class="[ns.e('images')]">
-        <TnPhotoAlbum :data="images" />
+      <view v-if="!!imageCount" :class="[ns.e('images')]">
+        <!-- 一张图片 -->
+        <view
+          v-if="imageCount === 1"
+          :class="[ns.em('images', 'item'), ns.is('one')]"
+        >
+          <TnLazyLoad :src="images[0]" />
+        </view>
+        <!-- 两张图片 -->
+        <view
+          v-if="imageCount === 2"
+          :class="[ns.em('images', 'item'), ns.is('two')]"
+        >
+          <TnPhotoAlbum :data="images" :column="2" />
+        </view>
+        <!-- 三张图片 -->
+        <view
+          v-if="imageCount === 3"
+          :class="[ns.em('images', 'item'), ns.is('three')]"
+        >
+          <view class="image-wrapper-left">
+            <view class="image-container">
+              <TnLazyLoad :src="images[0]" />
+            </view>
+          </view>
+          <view class="image-wrapper-right">
+            <view class="image-container">
+              <TnLazyLoad :src="images[0]" />
+            </view>
+            <view class="image-container">
+              <TnLazyLoad :src="images[0]" />
+            </view>
+          </view>
+        </view>
+        <!-- 四张图片 -->
+        <view
+          v-if="imageCount === 4"
+          :class="[ns.em('images', 'item'), ns.is('four')]"
+        >
+          <TnPhotoAlbum :data="images" :column="2" />
+        </view>
+        <TnPhotoAlbum v-if="imageCount >= 5" :data="images" />
       </view>
     </view>
 

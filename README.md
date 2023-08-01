@@ -179,6 +179,12 @@ const graphicData = {
 | view-user-avatars          | 查看用户头像列表                                                                                                      | String[] | []           | -                                                                 |
 | max-view-user-avatar-count | 最大显示用户头像数量                                                                                                  | Number   | 4            | -                                                                 |
 
+### Slots
+
+| 插槽名         | 说明             |
+| -------------- | ---------------- |
+| briefOperation | 顶部右边操作区域 |
+
 ### Events
 
 | 事件名        | 说明               | 类型         |

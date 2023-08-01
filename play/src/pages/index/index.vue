@@ -25,12 +25,9 @@ const generateData = () => {
       tags: ['标签1', '标签2'],
       content:
         '看看打开打开年份记得当年开始放假哦额外欺骗人u饿哦漂亮放佛怕打雷舒服呢我脾气破费了发多少呢；否，可能打飞机哦喷泉哦怕可能地方打开螺丝粉年份的肌肤看能否。',
-      images: [
-        'https://tnuiimage.tnkjapp.com/swiper/ad1.jpg',
-        'https://tnuiimage.tnkjapp.com/swiper/ad2.jpg',
-        'https://tnuiimage.tnkjapp.com/swiper/ad3.jpg',
-        'https://tnuiimage.tnkjapp.com/swiper/ad4.jpg',
-      ],
+      images: Array.from({ length: i + 1 }).map(
+        () => 'https://tnuiimage.tnkjapp.com/swiper/ad1.jpg'
+      ),
       viewCount: 100 + i,
       commentCount: 101 + i,
       likeCount: 102 + i,
@@ -65,7 +62,9 @@ generateData()
         :like-count="item.likeCount"
         :view-user-avatars="item.viewUserAvatars"
         active-like
-      />
+      >
+        <template #briefOperation> 关注 </template>
+      </TnGraphicCard>
     </view>
   </view>
 </template>

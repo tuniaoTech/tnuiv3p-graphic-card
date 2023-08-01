@@ -1,4 +1,5 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { isEmptyVariableInDefault } from '@tuniao/tnui-vue3-uniapp/utils'
 
 import type { SetupContext } from 'vue'
 import type { GraphicCardEmits, GraphicCardProps } from '../types'
@@ -18,6 +19,11 @@ export const useGraphicCard = (
     )
     viewUserCount.value = props.viewUserAvatars.length
   }
+
+  // 图片数量
+  const imageCount = computed<number>(() =>
+    isEmptyVariableInDefault(props?.images?.length, 0)
+  )
 
   // 卡片点击事件
   const cardClickEvent = () => {
@@ -52,6 +58,7 @@ export const useGraphicCard = (
   return {
     viewUserAvatars,
     viewUserCount,
+    imageCount,
     cardClickEvent,
     handleAvatarClick,
     handleMoreClick,
