@@ -52,7 +52,7 @@ const {
           </view>
         </view>
       </view>
-      <view :class="[ns.e('brief-info__operation')]">
+      <view :class="[ns.e('brief-info__operation')]" v-if="showMore">
         <slot name="briefOperation">
           <view
             :class="[ns.em('brief-info__operation', 'more')]"
@@ -112,10 +112,10 @@ const {
           </view>
           <view class="image-wrapper-right">
             <view class="image-container">
-              <TnLazyLoad :src="images[0]" />
+              <TnLazyLoad :src="images[1]" />
             </view>
             <view class="image-container">
-              <TnLazyLoad :src="images[0]" />
+              <TnLazyLoad :src="images[2]" />
             </view>
           </view>
         </view>
