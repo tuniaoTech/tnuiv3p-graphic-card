@@ -52,7 +52,7 @@ const {
           </view>
         </view>
       </view>
-      <view :class="[ns.e('brief-info__operation')]" v-if="showMore">
+      <view v-if="showMore" :class="[ns.e('brief-info__operation')]">
         <slot name="briefOperation">
           <view
             :class="[ns.em('brief-info__operation', 'more')]"

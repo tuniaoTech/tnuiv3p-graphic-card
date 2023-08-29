@@ -11,13 +11,6 @@ export const graphicCardProps = buildProps({
     required: true,
   },
   /**
-   * @description 是否显示更多(是否显示顶部右边操作区域)
-   */
-  showMore: {
-    type: Boolean,
-    default: true,
-  },
-  /**
    * @description 标题
    */
   title: {
@@ -56,6 +49,13 @@ export const graphicCardProps = buildProps({
   images: {
     type: definePropType<string[]>(Array),
     default: () => [],
+  },
+  /**
+   * @description 是否显示更多(是否显示顶部右边操作区域)
+   */
+  showMore: {
+    type: Boolean,
+    default: true,
   },
   /**
    * @description 显示查看数量
