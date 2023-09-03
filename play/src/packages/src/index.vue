@@ -35,7 +35,7 @@ const {
 </script>
 
 <template>
-  <view :class="[ns.b()]" @tap.stop="cardClickEvent">
+  <view :class="[ns.b()]" @tap="cardClickEvent">
     <!-- 简要信息 -->
     <view :class="[ns.e('brief-info')]">
       <view :class="[ns.e('brief-info__content')]">
