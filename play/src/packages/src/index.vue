@@ -165,21 +165,23 @@ const {
         </view>
       </view>
       <view
-        v-if="showViewUser && viewUserAvatars.length"
+        v-if="(showViewUser && viewUserAvatars.length) || $slots.bottomRight"
         :class="[ns.e('bottom-info__right')]"
       >
-        <!-- 查看用户头像列表 -->
-        <view :class="[ns.e('view-user-list')]">
-          <TnAvatarGroup border size="sm">
-            <TnAvatar
-              v-for="(viewUserAvatar, viewUserIndex) in viewUserAvatars"
-              :key="viewUserIndex"
-              :url="viewUserAvatar"
-            />
-          </TnAvatarGroup>
-        </view>
-        <!-- 查看用户数量 -->
-        <view :class="[ns.e('view-user-count')]">{{ viewUserCount }}人</view>
+        <slot name="bottomRight">
+          <!-- 查看用户头像列表 -->
+          <view :class="[ns.e('view-user-list')]">
+            <TnAvatarGroup border size="sm">
+              <TnAvatar
+                v-for="(viewUserAvatar, viewUserIndex) in viewUserAvatars"
+                :key="viewUserIndex"
+                :url="viewUserAvatar"
+              />
+            </TnAvatarGroup>
+          </view>
+          <!-- 查看用户数量 -->
+          <view :class="[ns.e('view-user-count')]">{{ viewUserCount }}人</view>
+        </slot>
       </view>
     </view>
   </view>

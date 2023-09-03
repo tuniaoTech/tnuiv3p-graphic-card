@@ -64,6 +64,7 @@ generateData()
         active-like
       >
         <template #briefOperation> 关注 </template>
+        <template #bottomRight>123</template>
       </TnGraphicCard>
     </view>
   </view>
