@@ -131,7 +131,9 @@ const {
     </view>
 
     <!-- 底部信息 -->
-    <view :class="[ns.e('bottom-info')]">
+    <view
+      :class="[ns.e('bottom-info'), ns.is('no-content', !!$slots.bottomRight)]"
+    >
       <view :class="[ns.e('bottom-info__left')]">
         <view
           v-if="showView"

@@ -201,6 +201,10 @@
       align-items: center;
     }
     /* 右边查看用户头像数据 end */
+
+    @include when(no-content) {
+      margin-top: 24rpx;
+    }
   }
   @include e(view-user-count) {
     margin-left: 12rpx;
