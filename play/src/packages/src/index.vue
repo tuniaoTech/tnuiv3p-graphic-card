@@ -14,6 +14,7 @@ const {
   viewUserAvatars,
   viewUserCount,
   imageCount,
+  previewImageHandle,
   cardClickEvent,
   handleAvatarClick,
   handleMoreClick,
@@ -90,6 +91,7 @@ const {
         <view
           v-if="imageCount === 1"
           :class="[ns.em('images', 'item'), ns.is('one')]"
+          @tap.stop="previewImageHandle(0)"
         >
           <TnLazyLoad :src="images[0]" />
         </view>
@@ -106,15 +108,15 @@ const {
           :class="[ns.em('images', 'item'), ns.is('three')]"
         >
           <view class="image-wrapper-left">
-            <view class="image-container">
+            <view class="image-container" @tap.stop="previewImageHandle(0)">
               <TnLazyLoad :src="images[0]" />
             </view>
           </view>
           <view class="image-wrapper-right">
-            <view class="image-container">
+            <view class="image-container" @tap.stop="previewImageHandle(1)">
               <TnLazyLoad :src="images[1]" />
             </view>
-            <view class="image-container">
+            <view class="image-container" @tap.stop="previewImageHandle(2)">
               <TnLazyLoad :src="images[2]" />
             </view>
           </view>

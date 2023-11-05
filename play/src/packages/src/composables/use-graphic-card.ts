@@ -25,6 +25,14 @@ export const useGraphicCard = (
     isEmptyVariableInDefault(props?.images?.length, 0)
   )
 
+  // 预览图片
+  const previewImageHandle = (index: number) => {
+    uni.previewImage({
+      urls: props.images,
+      current: index,
+    })
+  }
+
   // 卡片点击事件
   const cardClickEvent = () => {
     emits('click')
@@ -59,6 +67,7 @@ export const useGraphicCard = (
     viewUserAvatars,
     viewUserCount,
     imageCount,
+    previewImageHandle,
     cardClickEvent,
     handleAvatarClick,
     handleMoreClick,
