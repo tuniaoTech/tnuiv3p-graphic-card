@@ -1,3 +1,3 @@
-import type GraphicCard from './graphic-card.vue'
+import type GraphicCard from './index.vue'
 
 export type TnGraphicCardInstance = InstanceType<typeof GraphicCard>
