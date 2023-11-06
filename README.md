@@ -14,8 +14,8 @@ npm install tnuiv3p-tn-graphic-card
 
 ## 组件位置
 
-```bash
-tnuiv3p-tn-graphic-card/index.vue
+```typescript
+import TnGraphicCard from 'tnuiv3p-tn-graphic-card/index.vue'
 ```
 
 ## 平台差异说明
