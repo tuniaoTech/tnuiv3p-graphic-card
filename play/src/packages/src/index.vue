@@ -184,7 +184,9 @@ const {
             </TnAvatarGroup>
           </view>
           <!-- 查看用户数量 -->
-          <view :class="[ns.e('view-user-count')]">{{ viewUserCount }}人</view>
+          <view :class="[ns.e('view-user-count')]">
+            {{ viewCount !== undefined ? viewCount : viewUserCount }}人
+          </view>
         </slot>
       </view>
     </view>
