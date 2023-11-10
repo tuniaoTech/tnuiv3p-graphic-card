@@ -19,15 +19,15 @@ const {
   handleAvatarClick,
   handleMoreClick,
   handleCommentClick,
-  handleViewClick,
+  handleHotClick,
   handleLikeClick,
 } = useGraphicCard(props, emits)
 const {
   ns,
   tagClass,
   tagStyle,
-  viewClass,
-  viewStyle,
+  hotClass,
+  hotStyle,
   commentClass,
   commentStyle,
   likeClass,
@@ -138,14 +138,14 @@ const {
     >
       <view :class="[ns.e('bottom-info__left')]">
         <view
-          v-if="showView"
+          v-if="showHot"
           class="count-item-data"
-          :class="[viewClass]"
-          :style="viewStyle"
-          @tap.stop="handleViewClick"
+          :class="[hotClass]"
+          :style="hotStyle"
+          @tap.stop="handleHotClick"
         >
-          <TnIcon :name="activeView ? activeViewIcon : viewIcon" />
-          <view class="count">{{ viewCount }}</view>
+          <TnIcon :name="activeHot ? activeHotIcon : hotIcon" />
+          <view class="count">{{ hotCount }}</view>
         </view>
         <view
           v-if="showComment"

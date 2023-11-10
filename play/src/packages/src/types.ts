@@ -58,45 +58,45 @@ export const graphicCardProps = buildProps({
     default: true,
   },
   /**
-   * @description 显示查看数量
+   * @description 显示热度数量
    */
-  showView: {
+  showHot: {
     type: Boolean,
     default: true,
   },
   /**
-   * @description 是否激活查看
+   * @description 是否激活热度
    */
-  activeView: Boolean,
+  activeHot: Boolean,
   /**
-   * @description 查看数量数据
+   * @description 热度数量数据
    */
-  viewCount: {
+  hotCount: {
     type: Number,
     default: 0,
   },
   /**
-   * @description 查看数量图标
+   * @description 热度数量图标
    */
-  viewIcon: {
+  hotIcon: {
     type: String,
-    default: 'flower',
+    default: 'rocket',
   },
   /**
-   * @description 激活时查看数量图标
+   * @description 激活时热度数量图标
    */
-  activeViewIcon: {
+  activeHotIcon: {
     type: String,
-    default: 'flower-fill',
+    default: 'rocket-fill',
   },
   /**
-   * @description 查看数量图标颜色
+   * @description 热度数量图标颜色
    */
-  viewColor: String,
+  hotColor: String,
   /**
-   * @description 激活时查看数量图标颜色
+   * @description 激活时热度数量图标颜色
    */
-  activeViewColor: String,
+  activeHotColor: String,
   /**
    * @description 显示评论数量
    */
@@ -185,6 +185,13 @@ export const graphicCardProps = buildProps({
     default: true,
   },
   /**
+   * @description 实际查看数量数据
+   */
+  viewCount: {
+    type: Number,
+    default: 0,
+  },
+  /**
    * @description 查看用户头像列表
    */
   viewUserAvatars: {
@@ -206,17 +213,17 @@ export const graphicCardEmits = {
    */
   click: () => true,
   /**
-   * @description 点击用户头像
+   * @description 点击用户头像和浏览数量
    */
-  'avatar-click': () => true,
+  'avatar-view-click': () => true,
   /**
    * @description 更多按钮点击
    */
   'more-click': () => true,
   /**
-   * @description 点击查看数量
+   * @description 点击热度数量
    */
-  'view-click': () => true,
+  'hot-click': () => true,
   /**
    * @description 点击评论数量
    */

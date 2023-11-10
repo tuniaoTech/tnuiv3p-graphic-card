@@ -144,41 +144,42 @@ const graphicData = {
 
 ### Props
 
-| 属性名                     | 说明                                                                                                                  | 类型     | 默认值       | 可选值                                                            |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------- | ------------ | ----------------------------------------------------------------- |
-| avatar                     | 发布者头像地址                                                                                                        | String   | -            | -                                                                 |
-| title                      | 标题                                                                                                                  | String   | -            | -                                                                 |
-| description                | 描述                                                                                                                  | String   | -            | -                                                                 |
-| content                    | 内容                                                                                                                  | String   | -            | -                                                                 |
-| tags                       | 标签                                                                                                                  | String[] | []           | -                                                                 |
-| images                     | 图片列表                                                                                                              | String[] | []           | -                                                                 |
-| tag-bg-color               | 标签背景颜色，可以使用图鸟内置的[背景色](https://vue3.tuniaokj.com/zh-CN/guide/style/background.html)、hex、rgb、rgba | String   | -            | -                                                                 |
-| tag-text-color             | 标签文字颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba           | String   | -            | -                                                                 |
-| show-more                  | 显示右边更多操作区域                                                                                                  | Boolean  | `true`       | `false`                                                           |
-| show-view                  | 显示查看数量                                                                                                          | Boolean  | `true`       | `false`                                                           |
-| active-view                | 是否激活查看                                                                                                          | Boolean  | `false`      | `true`                                                            |
-| view-count                 | 查看数量数据                                                                                                          | Number   | 0            | -                                                                 |
-| view-icon                  | 查看数量图标                                                                                                          | String   | flower       | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| active-view-icon           | 激活时查看数量图标                                                                                                    | String   | flower-fill  | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| view-color                 | 查看数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba       | String   | -            | -                                                                 |
-| active-view-color          | 激活时查看数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                                 |
-| show-comment               | 显示评论数量                                                                                                          | Boolean  | `true`       | `false`                                                           |
-| active-comment             | 是否激活评论                                                                                                          | Boolean  | `false`      | `true`                                                            |
-| comment-count              | 评论数量数据                                                                                                          | Number   | 0            | -                                                                 |
-| comment-icon               | 评论数量图标                                                                                                          | String   | comment      | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| active-comment-icon        | 激活时评论数量图标                                                                                                    | String   | comment-fill | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| comment-color              | 评论数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba       | String   | -            | -                                                                 |
-| active-comment-color       | 激活时评论数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                                 |
-| show-like                  | 显示点赞数量                                                                                                          | Boolean  | `true`       | `false`                                                           |
-| active-like                | 是否激活点赞                                                                                                          | Boolean  | `false`      | `true`                                                            |
-| like-count                 | 点赞数量数据                                                                                                          | Number   | 0            | -                                                                 |
-| like-icon                  | 点赞数量图标                                                                                                          | String   | like         | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| active-like-icon           | 激活时点赞数量图标                                                                                                    | String   | like-fill    | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
-| like-color                 | 点赞数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba       | String   | -            | -                                                                 |
-| active-like-color          | 激活时点赞数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                                 |
-| show-view-user             | 显示查看用户头像信息                                                                                                  | Boolean  | `true`       | `false`                                                           |
-| view-user-avatars          | 查看用户头像列表                                                                                                      | String[] | []           | -                                                                 |
-| max-view-user-avatar-count | 最大显示用户头像数量                                                                                                  | Number   | 4            | -                                                                 |
+| 属性名                     | 说明                                                         | 类型     | 默认值       | 可选值                                                       |
+| -------------------------- | ------------------------------------------------------------ | -------- | ------------ | ------------------------------------------------------------ |
+| avatar                     | 发布者头像地址                                               | String   | -            | -                                                            |
+| title                      | 标题                                                         | String   | -            | -                                                            |
+| description                | 描述                                                         | String   | -            | -                                                            |
+| content                    | 内容                                                         | String   | -            | -                                                            |
+| tags                       | 标签                                                         | String[] | []           | -                                                            |
+| images                     | 图片列表                                                     | String[] | []           | -                                                            |
+| tag-bg-color               | 标签背景颜色，可以使用图鸟内置的[背景色](https://vue3.tuniaokj.com/zh-CN/guide/style/background.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| tag-text-color             | 标签文字颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| show-more                  | 显示右边更多操作区域                                         | Boolean  | `true`       | `false`                                                      |
+| show-hot                   | 显示热度数量                                                 | Boolean  | `true`       | `false`                                                      |
+| active-hot                 | 是否激活热度                                                 | Boolean  | `false`      | `true`                                                       |
+| hot-count                  | 热度数量数据                                                 | Number   | 0            | -                                                            |
+| hot-icon                   | 热度数量图标                                                 | String   | rocket       | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| active-hot-icon            | 激活时热度数量图标                                           | String   | rocket-fill  | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| hot-color                  | 热度数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| active-hot-color           | 激活时热度数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| show-comment               | 显示评论数量                                                 | Boolean  | `true`       | `false`                                                      |
+| active-comment             | 是否激活评论                                                 | Boolean  | `false`      | `true`                                                       |
+| comment-count              | 评论数量数据                                                 | Number   | 0            | -                                                            |
+| comment-icon               | 评论数量图标                                                 | String   | comment      | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| active-comment-icon        | 激活时评论数量图标                                           | String   | comment-fill | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| comment-color              | 评论数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| active-comment-color       | 激活时评论数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| show-like                  | 显示点赞数量                                                 | Boolean  | `true`       | `false`                                                      |
+| active-like                | 是否激活点赞                                                 | Boolean  | `false`      | `true`                                                       |
+| like-count                 | 点赞数量数据                                                 | Number   | 0            | -                                                            |
+| like-icon                  | 点赞数量图标                                                 | String   | like         | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| active-like-icon           | 激活时点赞数量图标                                           | String   | like-fill    | [图标有效值](https://vue3.tuniaokj.com/zh-CN/component/icon.html) |
+| like-color                 | 点赞数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| active-like-color          | 激活时点赞数量图标颜色，支持图鸟内置的[颜色值](https://vue3.tuniaokj.com/zh-CN/guide/style/text.html)、hex、rgb、rgba | String   | -            | -                                                            |
+| show-view-user             | 显示查看用户头像信息                                         | Boolean  | `true`       | `false`                                                      |
+| view-count                 | 实际查看数量数据                                             | Number   | 0            | -                                                            |
+| view-user-avatars          | 查看用户头像列表                                             | String[] | []           | -                                                            |
+| max-view-user-avatar-count | 最大显示用户头像数量                                         | Number   | 4            | -                                                            |
 
 ### Slots
 
@@ -189,11 +190,11 @@ const graphicData = {
 
 ### Events
 
-| 事件名        | 说明               | 类型         |
-| ------------- | ------------------ | ------------ |
-| click         | 图文卡片点击事件   | `() => void` |
-| avatar-click  | 发布者头像点击事件 | `() => void` |
-| more-click    | 更多按钮点击事件   | `() => void` |
-| view-click    | 查看数量点击事件   | `() => void` |
-| comment-click | 评论数量点击事件   | `() => void` |
-| like-click    | 点赞数量点击事件   | `() => void` |
+| 事件名            | 说明                         | 类型         |
+| ----------------- | ---------------------------- | ------------ |
+| click             | 图文卡片点击事件             | `() => void` |
+| avatar-view-click | 发布者头像和查看数量点击事件 | `() => void` |
+| more-click        | 更多按钮点击事件             | `() => void` |
+| hot-click         | 热度数量点击事件             | `() => void` |
+| comment-click     | 评论数量点击事件             | `() => void` |
+| like-click        | 点赞数量点击事件             | `() => void` |

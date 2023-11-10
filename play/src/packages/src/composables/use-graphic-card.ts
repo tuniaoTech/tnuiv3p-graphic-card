@@ -40,7 +40,7 @@ export const useGraphicCard = (
 
   // 用户头像点击事件
   const handleAvatarClick = () => {
-    emits('avatar-click')
+    emits('avatar-view-click')
   }
 
   // 更多按钮点击事件
@@ -48,9 +48,9 @@ export const useGraphicCard = (
     emits('more-click')
   }
 
-  // 点击查看数量
-  const handleViewClick = () => {
-    emits('view-click')
+  // 点击热度数量
+  const handleHotClick = () => {
+    emits('hot-click')
   }
 
   // 点击评论数量
@@ -71,7 +71,7 @@ export const useGraphicCard = (
     cardClickEvent,
     handleAvatarClick,
     handleMoreClick,
-    handleViewClick,
+    handleHotClick,
     handleCommentClick,
     handleLikeClick,
   }

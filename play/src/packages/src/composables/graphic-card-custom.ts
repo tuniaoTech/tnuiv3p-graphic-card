@@ -16,12 +16,12 @@ export const useGraphicCardCustomStyle = (props: GraphicCardProps) => {
     toRef(props, 'tagTextColor'),
     'text'
   )
-  const [viewColorClass, viewColorStyle] = useComponentColor(
-    toRef(props, 'viewColor'),
+  const [hotColorClass, hotColorStyle] = useComponentColor(
+    toRef(props, 'hotColor'),
     'text'
   )
-  const [activeViewColorClass, activeViewColorStyle] = useComponentColor(
-    toRef(props, 'activeViewColor'),
+  const [activeHotColorClass, activeHotColorStyle] = useComponentColor(
+    toRef(props, 'activeHotColor'),
     'text'
   )
   const [commentColorClass, commentColorStyle] = useComponentColor(
@@ -68,29 +68,29 @@ export const useGraphicCardCustomStyle = (props: GraphicCardProps) => {
     return style
   })
 
-  // 查看对应的类
-  const viewClass = computed<string>(() => {
-    const cls: string[] = [ns.e('view')]
+  // 热度对应的类
+  const hotClass = computed<string>(() => {
+    const cls: string[] = [ns.e('hot')]
 
-    if (props.activeView) {
-      if (activeViewColorClass.value) cls.push(activeViewColorClass.value)
+    if (props.activeHot) {
+      if (activeHotColorClass.value) cls.push(activeHotColorClass.value)
     } else {
-      if (viewColorClass.value) cls.push(viewColorClass.value)
+      if (hotColorClass.value) cls.push(hotColorClass.value)
     }
 
     return cls.join(' ')
   })
-  // 查看对应的样式
-  const viewStyle = computed<CSSProperties>(() => {
+  // 热度对应的样式
+  const hotStyle = computed<CSSProperties>(() => {
     const style: CSSProperties = {}
 
-    if (props.activeView) {
-      if (!activeViewColorClass.value) {
-        style.color = activeViewColorStyle.value || 'var(--tn-color-primary)'
+    if (props.activeHot) {
+      if (!activeHotColorClass.value) {
+        style.color = activeHotColorStyle.value || 'var(--tn-color-primary)'
       }
     } else {
-      if (!viewColorClass.value) {
-        style.color = viewColorStyle.value || 'var(--tn-color-gray)'
+      if (!hotColorClass.value) {
+        style.color = hotColorStyle.value || 'var(--tn-color-gray)'
       }
     }
 
@@ -159,8 +159,8 @@ export const useGraphicCardCustomStyle = (props: GraphicCardProps) => {
     ns,
     tagClass,
     tagStyle,
-    viewClass,
-    viewStyle,
+    hotClass,
+    hotStyle,
     commentClass,
     commentStyle,
     likeClass,
